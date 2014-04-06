@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>天气预报</title>
+    <link rel="stylesheet" href="tree/css/jquery.treeview.css" />
+	<link rel="stylesheet" href="tree/css/screen.css" />
+	<noscript>您的浏览器好像不支持JavaScript，请更改您的浏览器选项以启用JavaScript</noscript>
+	<script src="tree/js/jquery.js" type="text/javascript"></script>
+	<script src="tree/js/jquery.cookie.js" type="text/javascript"></script>
+	<script src="tree/js/jquery.treeview.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript" src="js/Default.js"></script>
+
+</head>
+<body>
+    <form id="form1" onsubmit="return btnClick()">
+    <div>
+    <table width='100%' style="table-layout:fixed;">
+    <tr><td align="center" valign="middle" colspan="2" style="height:100px">
+        <input name="TextBox1" type="text" value="输入城市名称，如：北京" id="TextBox1" onclick="textChange();" style="color:Gray;width:152px;" />
+        &nbsp;&nbsp;&nbsp;
+        <input type="submit" name="Button1" value="查看天气" onclick="return btnClick();" id="Button1" />
+        
+    </td>
+    </tr>
+    <tr><td colspan="2"><div align="center"><img src="resources\city_map.gif" width="740" height="595" border="0" usemap="#Map">  
+<map name="Map" id="Map">  
+<area shape="rect" coords="613,103,659,129" title="哈尔滨" />  
+<area shape="rect" coords="604,153,641,172" title="长春" />  
+<area shape="rect" coords="584,180,609,210" title="沈阳" />  
+<area shape="rect" coords="411,208,472,228" title="呼和浩特" />  
+<area shape="rect" coords="507,205,541,229" title="北京" />  
+<area shape="rect" coords="524,230,566,248" title="天津" />  
+<area shape="rect" coords="489,237,525,263" title="石家庄" />  
+<area shape="rect" coords="526,271,567,290" title="济南" />  
+<area shape="rect" coords="454,261,486,284" title="太原" />  
+<area shape="rect" coords="381,250,412,284" title="银川" />  
+<area shape="rect" coords="318,282,350,310" title="西宁" />  
+<area shape="rect" coords="362,291,389,326" title="兰州" />  
+<area shape="rect" coords="409,319,445,348" title="西安" />  
+<area shape="rect" coords="476,313,512,341" title="郑州" />  
+<area shape="rect" coords="527,344,558,377" title="合肥" />  
+<area shape="rect" coords="558,328,585,356" title="南京" />  
+<area shape="rect" coords="591,341,631,370" title="上海" />  
+<area shape="rect" coords="564,371,597,403" title="杭州" />  
+<area shape="rect" coords="605,431,645,461" title="台北" />  
+<area shape="rect" coords="194,374,239,395" title="拉萨" />  
+<area shape="rect" coords="348,351,380,387" title="成都" />  
+<area shape="rect" coords="394,379,433,403" title="重庆" />  
+<area shape="rect" coords="465,365,511,387" title="武汉" />  
+<area shape="rect" coords="511,401,542,430" title="南昌" />  
+<area shape="rect" coords="466,408,498,439" title="长沙" />  
+<area shape="rect" coords="397,418,433,454" title="贵阳" />  
+<area shape="rect" coords="338,458,367,494" title="昆明" />  
+<area shape="rect" coords="417,471,455,506" title="南宁" />  
+<area shape="rect" coords="492,470,539,494" title="广州" />  
+<area shape="rect" coords="541,436,583,460" title="福州" />  
+<area shape="rect" coords="511,497,548,523" title="香港" />  
+<area shape="rect" coords="481,504,512,537" title="澳门" />  
+<area shape="rect" coords="429,541,470,573" title="海口" />  
+<area shape="rect" coords="177,155,213,192" title="乌鲁木齐" />  
+</map>  
+</div></td></tr>
+     <tr valign="top">
+     <td style="height:800px; border-style: solid; border-width: thin;">
+        <div id="WeatherServiceDiv"></div></td>
+     <td style="height:800px;border-style: solid; border-width: thin;"><span id="Sina" onclick="tab(this);">新浪</span><span id="WeatherService" onclick="tab(this);">WebService</span>
+         <div id="SinaDiv"></div></td>     
+         
+     </tr>
+     
+    </table>
+    </div>
+    <script type="text/javascript">        onFirstLoad();</script></form>
+</body>
+</html>

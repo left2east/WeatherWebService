@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetPurBidNoticeListByCond">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="notiAttr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="noticeType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="area" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="noticeSort" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPurBidNoticeListByCondResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPurBidNoticeListByCondResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNoticeBodyByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="noticeID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNoticeBodyByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNoticeBodyByIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVmappInfoByCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVmappInfoByCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVmappInfoByCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEPBillsByVendorCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEPBillsByVendorCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEPBillsByVendorCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetPurBidNoticeListByCondSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPurBidNoticeListByCond" />
+  </wsdl:message>
+  <wsdl:message name="GetPurBidNoticeListByCondSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPurBidNoticeListByCondResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNoticeBodyByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNoticeBodyByID" />
+  </wsdl:message>
+  <wsdl:message name="GetNoticeBodyByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNoticeBodyByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVmappInfoByCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVmappInfoByCode" />
+  </wsdl:message>
+  <wsdl:message name="GetVmappInfoByCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVmappInfoByCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEPBillsByVendorCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEPBillsByVendorCode" />
+  </wsdl:message>
+  <wsdl:message name="GetEPBillsByVendorCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEPBillsByVendorCodeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DataSourceForWeChatSrvSoap">
+    <wsdl:operation name="GetPurBidNoticeListByCond">
+      <wsdl:input message="tns:GetPurBidNoticeListByCondSoapIn" />
+      <wsdl:output message="tns:GetPurBidNoticeListByCondSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNoticeBodyByID">
+      <wsdl:input message="tns:GetNoticeBodyByIDSoapIn" />
+      <wsdl:output message="tns:GetNoticeBodyByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVmappInfoByCode">
+      <wsdl:input message="tns:GetVmappInfoByCodeSoapIn" />
+      <wsdl:output message="tns:GetVmappInfoByCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEPBillsByVendorCode">
+      <wsdl:input message="tns:GetEPBillsByVendorCodeSoapIn" />
+      <wsdl:output message="tns:GetEPBillsByVendorCodeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DataSourceForWeChatSrvSoap" type="tns:DataSourceForWeChatSrvSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPurBidNoticeListByCond">
+      <soap:operation soapAction="http://tempuri.org/GetPurBidNoticeListByCond" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNoticeBodyByID">
+      <soap:operation soapAction="http://tempuri.org/GetNoticeBodyByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVmappInfoByCode">
+      <soap:operation soapAction="http://tempuri.org/GetVmappInfoByCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEPBillsByVendorCode">
+      <soap:operation soapAction="http://tempuri.org/GetEPBillsByVendorCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DataSourceForWeChatSrvSoap12" type="tns:DataSourceForWeChatSrvSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPurBidNoticeListByCond">
+      <soap12:operation soapAction="http://tempuri.org/GetPurBidNoticeListByCond" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNoticeBodyByID">
+      <soap12:operation soapAction="http://tempuri.org/GetNoticeBodyByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVmappInfoByCode">
+      <soap12:operation soapAction="http://tempuri.org/GetVmappInfoByCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEPBillsByVendorCode">
+      <soap12:operation soapAction="http://tempuri.org/GetEPBillsByVendorCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DataSourceForWeChatSrv">
+    <wsdl:port name="DataSourceForWeChatSrvSoap" binding="tns:DataSourceForWeChatSrvSoap">
+      <soap:address location="http://111.205.158.4/cwbase/service/CEPP/DataSourceForWeChatSrv.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DataSourceForWeChatSrvSoap12" binding="tns:DataSourceForWeChatSrvSoap12">
+      <soap12:address location="http://111.205.158.4/cwbase/service/CEPP/DataSourceForWeChatSrv.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
